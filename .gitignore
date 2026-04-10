@@ -1,0 +1,14 @@
+# Variables de entorno (contiene API keys y secretos)
+.env
+.env.local
+.env.*.local
+
+# Archivo de configuración con API keys (no subir al repo)
+JS/config.js
+
+# Dependencias
+node_modules/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
