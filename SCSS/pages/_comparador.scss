@@ -1,0 +1,448 @@
+/* CSS que mantiene tu estilo visual pero funciona con columnas independientes PERFECTAMENTE ALINEADAS */
+
+.comparador-sectionn{
+    margin-top: 180px;
+}
+
+.comparador-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.comparador-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.comparador-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+/* Sección de selección de máquinas */
+.comparador-selection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.comparador-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.comparador-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    background: #f8f9fa;
+}
+
+.comparador-image-container {
+    width: 100%;
+    height: 200px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.comparador-machine-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.comparador-placeholder {
+    color: #999;
+    font-size: 14px;
+}
+
+.comparador-machine-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    min-height: 25px;
+}
+
+.comparador-button{
+    background: #af272e;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 100%;
+    transition: background 0.3s;
+    text-decoration: none;
+    display: block;
+}
+
+.comparador-button:hover {
+    background: #8f1e23;
+}
+
+.comparador-more-info {
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease-out;
+}
+
+.comparador-more-info:hover {
+    color: #af272e;
+}
+
+/* Sección de comparación - PERFECTAMENTE ALINEADA */
+.comparador-comparison {
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.comparador-comparison-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 700;
+}
+
+/* Contenedor de columnas independientes con alineación perfecta FORZADA */
+.comparador-columns-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: stretch;
+    align-items: start; /* Importante para alineación */
+}
+
+/* NUEVO: Contenedor que sincroniza las alturas de las filas */
+.comparador-sync-container {
+    display: contents; /* Permite que el grid container controle directamente las columnas */
+}
+
+/* Cada columna de máquina */
+.comparador-machine-column {
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header de cada máquina */
+.comparador-machine-header {
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 3px solid #000000;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Secciones dentro de cada máquina - ALTURA UNIFORME */
+.comparador-section {
+    margin-bottom: 30px;
+    flex-shrink: 0; /* Evita que se comprima */
+}
+
+#comparison-content p {
+    display: flex;
+    justify-content: center;
+}
+
+.comparador-section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 12px 0;
+    border-bottom: 2px solid #af272e;
+    margin-bottom: 15px;
+    color: #333;
+    min-height: 40px; /* Altura mínima para consistencia */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Lista de especificaciones con altura uniforme FORZADA */
+.comparador-specs-list {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(80px, auto));
+    gap: 0;
+    align-items: stretch;
+}
+
+/* Cada item de especificación con altura fija SUPER ESTRICTA */
+.comparador-spec-item {
+    text-align: center;
+    padding: 8px 4px;
+    border-bottom: 1px solid #f0f0f0;
+    height: 80px; /* ALTURA FIJA ESTRICTA en lugar de min-height */
+    display: grid;
+    grid-template-rows: 1fr 1fr; /* Divide el espacio en 2 partes iguales */
+    align-items: center;
+    overflow: hidden; /* Evita que el contenido sobresalga */
+}
+
+.comparador-spec-item:last-child {
+    border-bottom: none;
+}
+
+.comparador-feature-label {
+    font-weight: 600;
+    color: #555;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.1;
+    padding: 2px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.comparador-feature-value {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.2;
+    padding: 2px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Estilos especiales para valores */
+.comparador-feature-value.comparador-yes,
+.comparador-yes {
+    color: #af272e;
+    font-weight: 600;
+}
+
+.comparador-feature-value.comparador-no,
+.comparador-no {
+    color: #999;
+}
+
+/* Estilo especial para campos vacíos - MÁS PROFESIONAL */
+.comparador-feature-value:empty::after {
+    content: "—";
+    color: #ddd;
+    font-style: italic;
+    font-size: 16px;
+}
+
+/* Estilo para el guión cuando no hay datos */
+.comparador-feature-value:has-text("—") {
+    color: #ddd !important;
+    font-style: italic;
+}
+
+/* Asegurar que los guiones se vean consistentes */
+.comparador-feature-value {
+    font-size: 14px;
+    color: #333;
+    min-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    line-height: 1.3;
+}
+
+/* Mejorar la apariencia de campos vacíos */
+.comparador-spec-item:has(.comparador-feature-value:empty) {
+    opacity: 0.7;
+    background-color: #fafafa;
+}
+
+.comparador-empty {
+    color: #999;
+    font-style: italic;
+    text-align: center;
+    padding: 40px;
+    font-size: 16px;
+}
+
+/* Responsive Design con alineación mantenida */
+@media (max-width: 1080px) {
+    .comparador-selection {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .comparador-columns-container {
+        grid-template-columns: repeat(2, 1fr); /* FORZAR 2 COLUMNAS */
+    }
+
+    /* Ocultar la tercera tarjeta de máquina */
+    .comparador-card:nth-child(3) {
+        display: none;
+    }
+
+    /* Ocultar la tercera columna de comparación */
+    .comparador-machine-column:nth-child(3) {
+        display: none;
+    }
+
+    .comparador-title {
+        font-size: 2rem;
+    }
+
+    .comparador-comparison-title {
+        font-size: 1.5rem;
+    }
+
+    /* Mantener altura mínima en tablet - AUMENTADA */
+    .comparador-spec-item {
+        min-height: 75px;
+    }
+
+    .comparador-feature-label {
+        min-height: 28px;
+    }
+
+    .comparador-feature-value {
+        min-height: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .comparador-selection {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .comparador-columns-container {
+        grid-template-columns: repeat(2, 1fr); /* FORZAR 2 COLUMNAS EN MÓVIL TAMBIÉN */
+        gap: 15px;
+    }
+
+    /* Ocultar solo la tercera columna en móvil */
+    .comparador-card:nth-child(3) {
+        display: none;
+    }
+
+    /* Ocultar la tercera columna de comparación en móvil */
+    .comparador-machine-column:nth-child(3) {
+        display: none;
+    }
+
+    /* Alineación de textos en móvil mantenida */
+    .comparador-feature-label {
+        text-align: center;
+    }
+
+    .comparador-feature-value {
+        text-align: center;
+    }
+
+    .comparador-section-title {
+        text-align: center;
+    }
+
+    .comparador-machine-name {
+        text-align: center;
+    }
+
+    .comparador-container {
+        padding: 15px;
+    }
+
+    .comparador-title {
+        font-size: 1.8rem;
+    }
+
+    .comparador-comparison-title {
+        font-size: 1.3rem;
+    }
+
+    .comparador-machine-header {
+        font-size: 1.1rem;
+    }
+
+    /* Altura ligeramente reducida para móvil pero manteniendo alineación FUERTE */
+    .comparador-spec-item {
+        min-height: 70px;
+    }
+
+    .comparador-feature-label {
+        min-height: 26px;
+        font-size: 11px;
+    }
+
+    .comparador-feature-value {
+        min-height: 26px;
+        font-size: 13px;
+    }
+
+    .comparador-section-title {
+        min-height: 35px;
+    }
+}
+
+/* Asegurar que en móviles muy pequeños también funcione CON ALINEACIÓN PERFECTA */
+@media (max-width: 480px) {
+    .comparador-columns-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .comparador-machine-column:nth-child(3) {
+        display: none !important;
+    }
+    
+    .comparador-machine-column {
+        padding: 15px;
+    }
+
+    .comparador-specs-list {
+        grid-template-rows: repeat(auto-fit, minmax(65px, auto));
+    }
+
+    .comparador-spec-item {
+        height: 65px; /* Altura fija estricta */
+        padding: 4px 2px;
+    }
+
+    .comparador-feature-label {
+        font-size: 10px;
+        line-height: 1.0;
+    }
+
+    .comparador-feature-value {
+        font-size: 12px;
+        line-height: 1.1;
+    }
+}
+
+.comparador-hidden {
+    display: none;
+}

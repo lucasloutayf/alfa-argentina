@@ -1,0 +1,159 @@
+/*
+===============================================================================
+                            HERO SECTION
+===============================================================================
+*/
+
+.left{
+    display: flex !important; 
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+}
+
+.center{
+    display: flex !important; 
+    flex-direction: column!important;
+    justify-content: center!important;
+    align-items: center!important; 
+    text-align: center !important;
+}
+
+.right{
+    display: flex !important; 
+    flex-direction: column!important;
+    justify-content: center!important;
+    align-items: flex-end!important; 
+    text-align: left !important;
+}
+
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    color: white;
+    padding: 30px;
+    overflow: hidden;
+    
+    
+    /* OPTIMIZACIONES */
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+
+.hero-maquinas-familiares {
+    object-position: center center;
+    transform: translateY(10%); 
+    filter:contrast(0.8);
+    background-size: contain;
+}
+
+/* Imagen de fondo con HTML */
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -2;
+    
+    /* OPTIMIZACIONES PARA PARALLAX */
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* Overlay oscuro encima de la imagen */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.4));
+    z-index: -1;
+}
+
+
+/* Overlay exclusivo para el video - siempre visible */
+.hero-maquinas-familiares::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(221, 217, 217, 0.162), rgba(132, 128, 128, 0.423));
+    z-index: 0; /* Por encima del video pero debajo del contenido */
+    pointer-events: none; /* Para que no interfiera con clicks */
+}
+
+/* Asegurar que el contenido esté por encima */
+.hero-maquinas-familiares .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* El video debe estar en el fondo */
+.hero-maquinas-familiares video {
+    z-index: -1;
+}
+
+
+
+
+/* Contenido del hero */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    max-width: 800px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    max-width: 900px;
+    line-height: 1.4;
+}
+
+/* HERO - RESPONSIVE */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        padding: 0 20px;
+    }
+
+    .hero-maquinas-familiares{
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+    .hero-maquinas-familiares{
+        object-fit: contain;
+    }
+}

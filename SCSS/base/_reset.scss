@@ -1,0 +1,29 @@
+/*
+===============================================================================
+                            ESTILOS BASE Y RESET
+===============================================================================
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    /* Suavizar fuentes en navegadores webkit */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Optimizar scroll en iOS */
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    background-color: #F8F9FA;
+    /* Optimizar rendering */
+    text-rendering: optimizeSpeed;
+    overflow-x: hidden
+}

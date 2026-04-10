@@ -1,0 +1,246 @@
+.section {
+    padding: 80px 20px;
+    min-height: 80vh;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Optimización: usar will-change para preparar transformaciones y transiciones más suaves */
+    will-change: transform;
+    /* Activar aceleración por hardware */
+    transform: translateZ(0);
+    /* Transición más específica y optimizada */
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.section:nth-child(odd) { 
+    background: #F8F9FA; 
+}
+.section:nth-child(even) { 
+    background: #FFFFFF; 
+}
+
+.compare-machines-section{
+    display: flex;
+    justify-content: center;
+}
+
+.compare-machines{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.compare-machines h2 {
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: #2c3e50;
+    letter-spacing: 2px;
+    margin: 30px 0;
+}
+
+.compare-machines .cta-button {
+    text-align: center;
+
+    font-size: 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+    color: #2c3e50;
+    position: relative;
+    /* Optimización: mejorar renderizado de texto */
+    text-rendering: optimizeLegibility;
+    /* Activar aceleración por hardware */
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%) translateZ(0);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #af272e, #8b1f25);
+    border-radius: 2px;
+    /* Optimización: preparar para animaciones */
+    will-change: transform;
+}
+
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+    justify-content: center;
+    /* Optimización: contención para mejor performance */
+    contain: layout;
+}
+
+.product-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    
+    /* Optimizaciones críticas para fluidez */
+    transform: translateZ(0);
+    will-change: transform, box-shadow;
+    backface-visibility: hidden;
+    perspective: 1000px;
+    
+    /* Transición más suave y optimizada */
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #af272e, #721116);
+    transform: scaleX(0) translateZ(0);
+    /* Transición más suave */
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) translateZ(0);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.product-card:hover::before {
+    transform: scaleX(1) translateZ(0);
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto 25px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    object-fit: contain;
+    
+    /* Optimizaciones para imágenes */
+    transform: translateZ(0);
+    will-change: transform, background-color;
+    backface-visibility: hidden;
+    
+    /* Transición más suave */
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                background-color 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    background: #ecf0f1;
+    transform: scale(1.05) translateZ(0);
+}
+
+.product-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    /* Optimización de texto */
+    text-rendering: optimizeLegibility;
+}
+
+.product-description {
+    color: #7f8c8d;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    flex-grow: 1;
+    /* Optimización de texto */
+    text-rendering: optimizeSpeed;
+}
+
+.btn-comparar{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* Optimizaciones para dispositivos móviles */
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 15px;
+        margin-bottom: 60px;
+        /* Reducir will-change en móviles para ahorrar memoria */
+        will-change: auto;
+    }
+
+    .compare-machines h2 {
+    font-size: 2rem;
+}
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+    
+    .products-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        /* Simplificar en móviles */
+        contain: none;
+    }
+    
+    .product-card {
+        padding: 25px;
+        flex: none;
+        width: 100%;
+        max-width: 400px;
+        /* Reducir efectos en móviles para mejor performance */
+        will-change: auto;
+    }
+    
+    .product-card:hover {
+        /* Hover más sutil en móviles */
+        transform: translateY(-5px) translateZ(0);
+    }
+    
+    .product-card:hover .product-image {
+        transform: scale(1.02) translateZ(0);
+    }
+}
+
+/* Optimización adicional para dispositivos de alta densidad */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .product-image {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Optimización para reducir layout shift - removida para mantener diseño original */
+
+/* Prefetch y optimización de carga */
+.section {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 600px;
+}
+

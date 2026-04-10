@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Favicon estándar -->
+<link rel="icon" type="image/png" sizes="32x32" href="../Multimedia/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../Multimedia/favicon_io/favicon-16x16.png">
+<link rel="shortcut icon" href="../Multimedia/favicon_io/favicon.ico">
+
+<!-- Para Android -->
+<link rel="icon" type="image/png" sizes="192x192" href="../Multimedia/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../Multimedia/favicon_io/android-chrome-512x512.png">
+
+<!-- Para Apple -->
+<link rel="apple-touch-icon" href="../Multimedia/favicon_io/apple-touch-icon.png">
+
+    
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../CSS/styles.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet"
+  />
+
+    <!-- Font awesome -->
+   <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-Fo3rlrZj/k7ujTTXJp6a2eVqGd6mY8tA0PmFcO1v8gh0RZy7ZIRx7cvvX4Z3QhgyxXFF5N7k4pzKZzK2aPYbqg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+  <!-- Animate.css -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" 
+  />
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <title>Familiares - Alfa Argentina</title>
+</head>
+
+<body>
+
+    <!-- Overlay para cerrar el menú -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="top-bar">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img loading="lazy" src="../Multimedia/Logo Alfa.png" alt="Logo" />
+                    </a>
+                </div>
+                <div class="menu-toggle" id="menuToggle">☰</div>
+            </div>
+
+            <!-- Menú lateral desde la izquierda -->
+            <div class="navitems" id="navItems">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="./nosotros.html">Nosotros</a></li>
+                    <li><a href="./puntosDeVenta.html" >Puntos de Venta</a></li>
+                    <li><a href="./familiares.html">Maquinas Familiares</a></li>
+                    <li><a href="./industriales.html">Maquinas Industriales</a></li>
+                    <li><a href="./contacto.html" class="active">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+<!-- Hero Section -->
+<section class="hero center">
+    <!-- Imagen de fondo -->
+    <img class="hero-bg" src="../Multimedia/Comunicación Institucional/Fotos antiguas/Publicidad antigua 1.bmp" alt="Industria textil" loading="lazy">
+    
+    <!-- Overlay oscuro -->
+    <div class="hero-overlay"></div>
+    
+    <!-- Contenido -->
+    <div class="hero-content">
+        <h1 class="animate-element slide-down">Contacto</h1>
+    </div>
+</section>
+
+<section class="contacto-section">
+        <div class="contacto-container">
+            <!-- Título principal -->
+            <div class="contacto-title">
+                <h2 class="animate-element slide-down">Contáctanos</h2>
+                <p class="animate-element slide-left">¿Tienes alguna pregunta o comentario? Nos encantaría saber de ti. Envíanos un mensaje y te responderemos lo antes posible.</p>
+            </div>
+
+            <!-- Grid principal -->
+            <div class="contacto-grid">
+                <!-- Formulario de contacto -->
+                <div class="contacto-form-wrapper">
+                    <h3 class="contacto-form-title animate-element slide-down">Envía tu mensaje</h3>
+                    
+                    <div class="contacto-success-message" id="contacto-success">
+                        <i class="fas fa-check-circle"></i>
+                        ¡Mensaje enviado correctamente! Te responderemos pronto.
+                    </div>
+
+                    <form class="contacto-form" id="contacto-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="contacto-form-group">
+                            <label for="contacto-name" class="contacto-label animate-element slide-left">Nombre *</label>
+                            <input 
+                                type="text" 
+                                id="contacto-name" 
+                                name="name" 
+                                class="contacto-input animate-element slide-right" 
+                                required
+                                placeholder="Tu nombre completo"
+                            >
+                            <div class="contacto-error-message" id="contacto-name-error">
+                                Por favor, ingresa tu nombre
+                            </div>
+                        </div>
+
+                        <div class="contacto-form-group">
+                            <label for="contacto-email" class="contacto-label animate-element slide-left">Email *</label>
+                            <input 
+                                type="email" 
+                                id="contacto-email" 
+                                name="email" 
+                                class="contacto-input animate-element slide-right" 
+                                required
+                                placeholder="tu@email.com"
+                            >
+                            <div class="contacto-error-message" id="contacto-email-error">
+                                Por favor, ingresa un email válido
+                            </div>
+                        </div>
+
+                        <div class="contacto-form-group">
+                            <label for="contacto-message" class="contacto-label animate-element slide-left">Mensaje *</label>
+                            <textarea 
+                                id="contacto-message" 
+                                name="message" 
+                                class="contacto-textarea animate-element slide-right" 
+                                required
+                                placeholder="Escribe tu mensaje aquí..."
+                            ></textarea>
+                            <div class="contacto-error-message" id="contacto-message-error">
+                                Por favor, escribe tu mensaje
+                            </div>
+                        </div>
+
+                        <button type="submit" class="contacto-btn animate-element slide-down">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar mensaje
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Información de contacto -->
+                <div class="contacto-info-wrapper">
+                    <h3 class="contacto-info-title animate-element slide-down">Información de contacto</h3>
+                    
+                    <div class="contacto-info-item animate-element slide-right">
+                        <div class="contacto-info-icon">
+                            <ion-icon name="call"></ion-icon>
+                        </div>
+                        <div class="contacto-info-content">
+                            <h4>Teléfono</h4>
+                            <p>+54 351 123-4567</p>
+                        </div>
+                    </div>
+
+                    <div class="contacto-info-item animate-element slide-left">
+                        <div class="contacto-info-icon">
+                            <ion-icon name="mail"></ion-icon>
+                        </div>
+                        <div class="contacto-info-content ">
+                            <h4>Correo electrónico</h4>
+                            <p> info@maquinasalfa.com<br>ventas@maquinasalfa.com</p>
+                        </div>
+                    </div>
+                <a href="./puntosDeVenta.html">
+                    <div class="contacto-info-item animate-element slide-right">
+                        <div class="contacto-info-icon">
+                            <ion-icon name="storefront"></ion-icon>
+                        </div>
+                        <div class="contacto-info-content">
+                            <h4>Puntos de venta</h4>
+                            <p>Pulsa aquí para visualizar nuestros puntos de venta y averiguar cuál es tu sucursal más cercana</p>
+                        </div>
+                        
+                    </div>
+                </a>
+
+                    <div class="contacto-info-item animate-element slide-left">
+                        <div class="contacto-info-icon">
+                            <ion-icon name="time"></ion-icon>
+                        </div>
+                        <div class="contacto-info-content">
+                            <h4>Horarios de atención</h4>
+                            <p>Lun - Vie: 9:00 - 18:00<br>Sáb: 9:00 - 13:00</p>
+                        </div>
+                    </div>
+
+                    
+
+                    <!-- Redes sociales -->
+                    <div class="contacto-social">
+                        <h4 class="contacto-social-title animate-element slide-down">Síguenos</h4>
+                        <div class="contacto-social-links">
+                            <a href="https://facebook.com/tuempresa" class="contacto-social-link animate-element slide-left" target="_blank" aria-label="Facebook">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                            <a href="https://instagram.com/tuempresa" class="contacto-social-link animate-element slide-right" target="_blank" aria-label="Instagram">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </a>
+                            <a href="https://wa.me/5493512620023?text=¡Hola!%20me%20contacto%20desde%20...%20debido%20a%20que%20me%20gustaria%20sumar%20Alfa%20a%20mi%20cartera%20de%20productos.%20🤗"  class="contacto-social-link animate-element slide-left" target="_blank" aria-label="WhatsApp">
+                                
+                                <ion-icon name="logo-whatsapp"></ion-icon>
+                            </a>
+                            <a href="mailto:info@tuempresa.com" class="contacto-social-link animate-element slide-right" aria-label="TikTok">
+                                <ion-icon name="logo-tiktok"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<!-- Footer HTML -->
+<footer class="site-footer-minimal">
+    <div class="footer-container-minimal">
+        <!-- Columna 1: Logo y descripción -->
+        <div class="footer-brand-minimal">
+            <div class="footer-logo">
+                <a href="../index.html">
+                    <img src="../Multimedia/Logo Alfa.png" alt="Logo Alfa" loading="lazy">
+                </a>
+            </div>
+            <p class="brand-description">Más de 100 años de historia española en máquinas de coser. Calidad europea con soporte local en Argentina.</p>
+        </div>
+
+        <!-- Columna 2: Contacto -->
+        <div class="footer-contact-minimal">
+            <h4>CONTACTO</h4>
+            <p>info@alfamaquinas.com</p>
+            <p>+54 351 555-1234</p>
+            <div class="address-minimal">
+                <p>Sarmiento 222,</p>
+                <p>Centro, Córdoba X5000ABC</p>
+            </div>
+            <a href="./puntosDeVenta.html" class="map-link-minimal">VER EN MAPA ></a>
+        </div>
+
+        <!-- Columna 3: Navegación -->
+        <div class="footer-navigation-minimal">
+            <h4>NAVEGACIÓN</h4>
+            <nav class="footer-nav-links">
+                <a href="./nosotros.html">Nosotros</a>
+                <a href="./puntosDeVenta.html">Puntos de Venta</a>
+                <a href="./familiares.html">Máquinas Familiares</a>
+                <a href="./industriales.html">Máquinas Industriales</a>
+                <a href="./contacto.html">Contacto</a>
+            </nav>
+        </div>
+
+        <!-- Columna 4: CTA Vendedores + Redes Sociales -->
+        <div class="footer-cta-minimal">
+            <h4>¿QUERÉS VENDER<br>ALFA?</h4>
+            <a href="https://wa.me/5493512620023?text=¡Hola!%20me%20contacto%20desde%20...%20debido%20a%20que%20me%20gustaria%20sumar%20Alfa%20a%20mi%20cartera%20de%20productos.%20🤗" class="cta-link-minimal" target="_blank">SUMA ALFA A TUS PRODUCTOS ></a>
+            
+            <!-- Redes Sociales debajo del CTA -->
+            <div class="footer-social-minimal">
+                <h4>SEGUINOS</h4>
+                <div class="social-links-minimal">
+                    <a href="https://www.facebook.com/alfaargentinacostura" aria-label="Facebook" target="_blank">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                    <a href="https://www.instagram.com/alfacosturaarg/" aria-label="Instagram" target="_blank">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="https://www.youtube.com/@alfaargentina1920" aria-label="YouTube" target="_blank">
+                        <ion-icon name="logo-youtube"></ion-icon>
+                    </a>
+                    <a href="https://www.tiktok.com/@alfa.argentina" aria-label="TikTok" target="_blank">
+                        <ion-icon name="logo-tiktok"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- JS externo -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/plugins/optimumx/ls.optimumx.min.js"></script>
+  <script defer src="../JS/script.js"></script>
+  <script defer src="../JS/animaciones.js"></script>
+  <script defer src="../JS/contacto.js"></script>
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>

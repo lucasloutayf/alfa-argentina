@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="../Multimedia/Logo Alfa.png" as="image">
+
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap"></noscript>
+    
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../CSS/styles.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Favicon estándar -->
+<link rel="icon" type="image/png" sizes="32x32" href="../Multimedia/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../Multimedia/favicon_io/favicon-16x16.png">
+<link rel="shortcut icon" href="../Multimedia/favicon_io/favicon.ico">
+
+<!-- Para Android -->
+<link rel="icon" type="image/png" sizes="192x192" href="../Multimedia/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../Multimedia/favicon_io/android-chrome-512x512.png">
+
+<!-- Para Apple -->
+<link rel="apple-touch-icon" href="../Multimedia/favicon_io/apple-touch-icon.png">
+
+
+    <!-- Font awesome -->
+   <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-Fo3rlrZj/k7ujTTXJp6a2eVqGd6mY8tA0PmFcO1v8gh0RZy7ZIRx7cvvX4Z3QhgyxXFF5N7k4pzKZzK2aPYbqg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+  <!-- Animate.css -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" 
+  />
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <title>Familiares - Alfa Argentina</title>
+</head>
+
+<body>
+    <!-- Overlay para cerrar el menú -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Header -->
+    <header id="header" class="header-fixed-scrolled">
+        <nav>
+            <div class="top-bar">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img loading="lazy" src="../Multimedia/Logo Alfa.png" alt="Logo" />
+                    </a>
+                </div>
+                <div class="menu-toggle" id="menuToggle">☰</div>
+            </div>
+
+            <!-- Menú lateral desde la izquierda -->
+            <div class="navitems" id="navItems">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="./nosotros.html">Nosotros</a></li>
+                    <li><a href="./puntosDeVenta.html" >Puntos de Venta</a></li>
+                    <li><a href="./familiares.html" class="active">Maquinas Familiares</a></li>
+                    <li><a href="./industriales.html">Maquinas Industriales</a></li>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Overlay para móvil -->
+    <div class="mobile-overlay" id="menuOverlay"></div>
+
+<section>
+    <div class="container-familiar margin-top">
+            <!-- Columna Izquierda -->
+            <div class="left-column">
+                <div class="category-tag animate-element slide-left">Máquina Coser</div>
+                <h1 class="title-familiar animate-element slide-up">ALFA</h1>
+                <h2 class="subtitle animate-element slide-down">STYLE 20</h2>
+                <p class="description animate-element slide-left">
+                    Diseño icónico, funcionalidad divertida y una gran cantidad de 
+                    opciones para que personalices tu SINGER con características 
+                    profesionales y tecnología avanzada.
+                </p>
+                <div class="price animate-element slide-right">
+                    Desde: <strong>€2,890</strong>
+                </div>
+                <div>
+                    <button class="cta-button animate-element slide-down">CONSEGUI TU ALFA</button>
+                </div>
+            </div>
+    
+            <!-- Columna Central -->
+            <div class="center-column animate-element slide-down">
+                <div class="machine-container" id="machineContainer">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Familiar-Alfa-Style-20.png" 
+                         alt="Máquina de Coser" 
+                         class="machine-image">
+                </div>
+            </div>
+    
+            <!-- Columna Derecha -->
+            <div class="right-column">
+                <div class="specs-container">
+                    <div class="spec-card animate-element slide-left">
+                        <div class="spec-value">850</div>
+                        <div class="spec-label">RPM máx</div>
+                    </div>
+    
+                    <div class="spec-card animate-element slide-right">
+                        <div class="spec-value">12kg</div>
+                        <div class="spec-label">Peso</div>
+                    </div>
+    
+                    <div class="spec-card animate-element slide-left">
+                        <div class="spec-value">120</div>
+                        <div class="spec-label">Puntadas</div>
+                    </div>
+    
+                    <div class="spec-card animate-element slide-right">
+                        <div class="spec-value">5min</div>
+                        <div class="spec-label">Setup rápido</div>
+                    </div>
+    
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+    <section class="producto-hero">
+        <div class="producto-container">
+            <div class="producto-hero-content">
+                <div class="producto-hero-text">
+                    <div class="producto-subtitle animate-element slide-left">Acerca de</div>
+                    <h2 class="animate-element slide-left">Style 20</h2>
+                    <p class="animate-element slide-left">
+                        La Máquina de Coser Familiar Alfa Style 20 es perfecta para quienes están dando sus primeros pasos en el mundo de la costura y buscan una aliada de calidad premium.
+                    </p>
+                    <p class="animate-element slide-left">
+                        Siendo cómoda, intuitiva y duradera, la Style 20 te permite realizar todo tipo de trabajos: desde crear prendas desde cero, colocar cierres, hacer arreglos y ojales, hasta coser telas livianas como lino o materiales más exigentes como jean, engomados o cuerina
+                    </p>
+                    <a href="#" class="cta-button animate-element slide-left">Comparar con otras máquinas</a>
+                </div>
+
+                <div class="producto-hero-image animate-element slide-right">
+                    <div class="producto-image-container">
+                        
+                        <img src="../Multimedia/Imagenes/maquina-de-coser-alfa-style-20-7-1024x1024.png" 
+                             alt="Maquina de Coser Alfa Style 20" 
+                             class="producto-main-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+     <section class="caracteristicas-section">
+        <div class="caracteristicas-container">
+            <!-- Título principal -->
+            <h2 class="caracteristicas-title">Características Principales</h2>
+            <p class="caracteristicas-subtitle">
+                En Alfa cuidamos la calidad hasta en los detalles. Por eso, la Style 20 viene equipada con funciones pensadas para convertirla en tu aliada ideal a la hora de coser sin complicaciones.
+            </p>
+            
+            <!-- Cuadrícula de características -->
+            <div class="caracteristicas-grid">
+                
+                <!-- Característica 1: 10 Puntadas -->
+                <div class="caracteristicas-card">
+                    <div class="caracteristicas-icon-container">
+                        <div class="caracteristicas-icon">
+                            <ion-icon name="options"></ion-icon>
+                        </div>
+                    </div>
+                    <h3 class="caracteristicas-card-title">10 Puntadas Incluidas</h3>
+                    <p class="caracteristicas-text">
+                        Incluye 10 puntadas pensadas para todo tipo de trabajos, desde costuras básicas hasta acabados decorativos profesionales.
+                    </p>
+                </div>
+            
+                <!-- Característica 2: Medidas Regulables -->
+                <div class="caracteristicas-card">
+                    <div class="caracteristicas-icon-container">
+                        <div class="caracteristicas-icon">
+                            <ion-icon name="resize"></ion-icon>
+                        </div>
+                    </div>
+                    <h3 class="caracteristicas-card-title">Medidas Ajustables</h3>
+                    <p class="caracteristicas-text">
+                        El largo de puntada es regulable de 0 a 4 mm, y el ancho de zigzag, de 0 a 5 mm para máxima precisión en cada proyecto.
+                    </p>
+                </div>
+            
+                <!-- Característica 3: Estructura de Metal -->
+                <div class="caracteristicas-card">
+                    <div class="caracteristicas-icon-container">
+                        <div class="caracteristicas-icon">
+                            <ion-icon name="shield-checkmark"></ion-icon>
+                        </div>
+                    </div>
+                    <h3 class="caracteristicas-card-title">Estructura de Metal</h3>
+                    <p class="caracteristicas-text">
+                        Estructura interna hecha completamente de metal, lo que la hace ultra resistente y potente para trabajos intensivos.
+                    </p>
+                </div>
+            
+                <!-- Característica 4: Motor 70W -->
+                <div class="caracteristicas-card">
+                    <div class="caracteristicas-icon-container">
+                        <div class="caracteristicas-icon">
+                            <ion-icon name="flash"></ion-icon>
+                        </div>
+                    </div>
+                    <h3 class="caracteristicas-card-title">Motor 70W</h3>
+                    <p class="caracteristicas-text">
+                        Motor de 70W, silencioso y eficiente energéticamente. Potencia constante con mínimo consumo de energía.
+                    </p>
+                </div>
+            
+                <!-- Característica 5: Funciones Premium -->
+                <div class="caracteristicas-card">
+                    <div class="caracteristicas-icon-container">
+                        <div class="caracteristicas-icon">
+                            <ion-icon name="construct"></ion-icon>
+                        </div>
+                    </div>
+                    <h3 class="caracteristicas-card-title">Funciones Premium</h3>
+                    <p class="caracteristicas-text">
+                        Doble altura de prensatelas, devanador automático y luz LED integrada para coser con comodidad en cualquier momento.
+                    </p>
+                </div>
+            
+                <!-- Característica 6: Controles Antideslizantes -->
+                <div class="caracteristicas-card">
+                    <div class="caracteristicas-icon-container">
+                        <div class="caracteristicas-icon">
+                            <ion-icon name="hand-right"></ion-icon>
+                        </div>
+                    </div>
+                    <h3 class="caracteristicas-card-title">Controles Seguros</h3>
+                    <p class="caracteristicas-text">
+                        Volantes antideslizantes en el selector de puntadas, largo de puntada y volante principal, para un manejo cómodo y seguro.
+                    </p>
+                </div>
+            
+                <!-- Característica 7: Brazo Libre -->
+                <div class="caracteristicas-card">
+                    <div class="caracteristicas-icon-container">
+                        <div class="caracteristicas-icon">
+                            <ion-icon name="move"></ion-icon>
+                        </div>
+                    </div>
+                    <h3 class="caracteristicas-card-title">Brazo Libre</h3>
+                    <p class="caracteristicas-text">
+                        Brazo libre ideal para coser prendas tubulares cómodamente como mangas, puños y cuellos con acceso completo.
+                    </p>
+                </div>
+            
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+<!-- Footer HTML -->
+<footer class="site-footer-minimal">
+    <div class="footer-container-minimal">
+        <!-- Columna 1: Logo y descripción -->
+        <div class="footer-brand-minimal">
+            <div class="footer-logo">
+                <a href="../index.html">
+                    <img src="../Multimedia/Logo Alfa.png" alt="Logo Alfa" loading="lazy">
+                </a>
+            </div>
+            <p class="brand-description">Más de 100 años de historia española en máquinas de coser. Calidad europea con soporte local en Argentina.</p>
+        </div>
+
+        <!-- Columna 2: Contacto -->
+        <div class="footer-contact-minimal">
+            <h4>CONTACTO</h4>
+            <p>info@alfamaquinas.com</p>
+            <p>+54 351 555-1234</p>
+            <div class="address-minimal">
+                <p>Sarmiento 222,</p>
+                <p>Centro, Córdoba X5000ABC</p>
+            </div>
+            <a href="./puntosDeVenta.html" class="map-link-minimal">VER EN MAPA ></a>
+        </div>
+
+        <!-- Columna 3: Navegación -->
+        <div class="footer-navigation-minimal">
+            <h4>NAVEGACIÓN</h4>
+            <nav class="footer-nav-links">
+                <a href="./nosotros.html">Nosotros</a>
+                <a href="./puntosDeVenta.html">Puntos de Venta</a>
+                <a href="./familiares.html">Máquinas Familiares</a>
+                <a href="./industriales.html">Máquinas Industriales</a>
+                <a href="./contacto.html">Contacto</a>
+            </nav>
+        </div>
+
+        <!-- Columna 4: CTA Vendedores + Redes Sociales -->
+        <div class="footer-cta-minimal">
+            <h4>¿QUERÉS VENDER<br>ALFA?</h4>
+            <a href="https://wa.me/5493512620023?text=¡Hola!%20me%20contacto%20desde%20...%20debido%20a%20que%20me%20gustaria%20sumar%20Alfa%20a%20mi%20cartera%20de%20productos.%20🤗" class="cta-link-minimal" target="_blank">SUMA ALFA A TUS PRODUCTOS ></a>
+            
+            <!-- Redes Sociales debajo del CTA -->
+            <div class="footer-social-minimal">
+                <h4>SEGUINOS</h4>
+                <div class="social-links-minimal">
+                    <a href="https://www.facebook.com/alfaargentinacostura" aria-label="Facebook" target="_blank">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                    <a href="https://www.instagram.com/alfacosturaarg/" aria-label="Instagram" target="_blank">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="https://www.youtube.com/@alfaargentina1920" aria-label="YouTube" target="_blank">
+                        <ion-icon name="logo-youtube"></ion-icon>
+                    </a>
+                    <a href="https://www.tiktok.com/@alfa.argentina" aria-label="TikTok" target="_blank">
+                        <ion-icon name="logo-tiktok"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- JS externo -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/plugins/optimumx/ls.optimumx.min.js"></script>
+  <script defer src="../JS/script.js"></script>
+  <script defer src="../JS/animaciones.js"></script>
+  <script defer src="../JS/contacto.js"></script>
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>

@@ -1,0 +1,275 @@
+/*
+===============================================================================
+                                HEADER
+===============================================================================
+*/
+
+header {
+    padding: 20px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    box-shadow: none;
+    
+    /* OPTIMIZACIONES CRÍTICAS */
+    will-change: background-color, box-shadow;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Clase que se agrega cuando se hace scroll */
+header.scrolled {
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10%;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.logo img {
+    height: 60px;
+    transition: filter 0.3s ease;
+    filter: brightness(0) invert(1);
+}
+
+/* Logo normal cuando hay scroll */
+header.scrolled .logo img {
+    filter: none;
+}
+
+.navitems ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+}
+
+.navitems ul li {
+    position: relative;
+}
+
+.navitems ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s ease;
+    
+    /* OPTIMIZACIONES */
+    will-change: color;
+    transform: translateZ(0);
+}
+
+
+
+/* El ::after para la clase active siempre visible */
+.navitems ul li a.active::after {
+    width: 100% !important;
+    background-color: #af272e;
+}
+
+
+
+/* Para mobile - mantener el color rojo en active */
+@media (max-width: 768px) {
+    .navitems ul li a.active {
+        color: #af272e;
+    }
+    
+    .navitems ul li a.active::after {
+        width: 100% !important;
+    }
+}
+
+
+
+/* Cambiar color del texto cuando hay scroll */
+header.scrolled .navitems ul li a {
+    color: #333;
+}
+
+/* Línea animada debajo de los links */
+.navitems ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: #af272e;
+    transition: width 0.3s ease-in-out;
+    
+    /* OPTIMIZACIONES CRÍTICAS */
+    will-change: width;
+    transform: translateZ(0);
+}
+
+.navitems ul li a:hover::after {
+    width: 100%;
+}
+
+/* HEADER - RESPONSIVE */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 1.8rem;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 1001;
+        position: relative;
+    }
+
+    header.scrolled .menu-toggle {
+        color: #333;
+    }
+
+    /* Menú lateral desde la izquierda */
+    .navitems {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 300px;
+        height: 100vh;
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        padding-top: 80px;
+        
+        /* OPTIMIZACIONES CRÍTICAS */
+        will-change: left;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+
+    .navitems.active {
+        left: 0;
+    }
+
+    .navitems ul {
+        flex-direction: column;
+        padding: 40px 30px;
+        gap: 25px;
+        height: 100%;
+        align-items: flex-start;
+    }
+
+    .navitems ul li {
+        width: 100%;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 15px;
+    }
+
+    .navitems ul li:last-child {
+        border-bottom: none;
+    }
+
+    .navitems ul li a {
+        color: #333;
+        font-size: 18px;
+        padding: 10px 0;
+        width: 100%;
+        justify-content: flex-start;
+        position: relative;
+    }
+
+    .navitems ul li a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -15px;
+        width: 0%;
+        height: 2px;
+        background-color: #af272e;
+        transition: width 0.3s ease-in-out;
+    }
+
+    .navitems ul li a:hover::after {
+        width: 100%;
+    }
+
+    /* Botón de cerrar en el menú */
+    .navitems::before {
+        content: '✕';
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        color: #666;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background-color: #f0f0f0;
+        transition: all 0.3s ease;
+    }
+
+    .navitems::before:hover {
+        background-color: #af272e;
+        color: white;
+        transform: rotate(90deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .navitems {
+        width: 280px;
+        left: -280px;
+    }
+}
+
+
+/* Clase para forzar el aspecto scrolleado sin hacer scroll */
+header.header-fixed-scrolled {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1)!important;
+}
+
+/* Logo normal cuando se usa la clase forzada */
+header.header-fixed-scrolled .logo img {
+    filter: none !important;
+}
+
+/* Texto del nav en color oscuro cuando se usa la clase forzada */
+header.header-fixed-scrolled .navitems ul li a {
+    color: #333 !important;
+}
+
+/* Menu toggle en color oscuro cuando se usa la clase forzada */
+@media (max-width: 768px) {
+    header.header-fixed-scrolled .menu-toggle {
+        color: #333 !important;
+    }
+}

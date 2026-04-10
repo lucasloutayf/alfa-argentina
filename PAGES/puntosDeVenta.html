@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../CSS/styles.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Animate.css -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" 
+  />
+
+  <!-- Font awesome -->
+   <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-Fo3rlrZj/k7ujTTXJp6a2eVqGd6mY8tA0PmFcO1v8gh0RZy7ZIRx7cvvX4Z3QhgyxXFF5N7k4pzKZzK2aPYbqg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+<!-- Favicon estándar -->
+<link rel="icon" type="image/png" sizes="32x32" href="../Multimedia/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../Multimedia/favicon_io/favicon-16x16.png">
+<link rel="shortcut icon" href="../Multimedia/favicon_io/favicon.ico">
+
+<!-- Para Android -->
+<link rel="icon" type="image/png" sizes="192x192" href="../Multimedia/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../Multimedia/favicon_io/android-chrome-512x512.png">
+
+<!-- Para Apple -->
+<link rel="apple-touch-icon" href="../Multimedia/favicon_io/apple-touch-icon.png">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <title>Puntos de Venta - Alfa Argentina </title>
+</head>
+
+<body>
+
+     <!-- Overlay para cerrar el menú -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="top-bar">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img loading="lazy" src="../Multimedia/Logo Alfa.png" alt="Logo" />
+                    </a>
+                </div>
+                <div class="menu-toggle" id="menuToggle">☰</div>
+            </div>
+
+            <!-- Menú lateral desde la izquierda -->
+            <div class="navitems" id="navItems">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="./nosotros.html">Nosotros</a></li>
+                    <li><a href="./puntosDeVenta.html" class="active">Puntos de Venta</a></li>
+                    <li><a href="./familiares.html">Maquinas Familiares</a></li>
+                    <li><a href="./industriales.html">Maquinas Industriales</a></li>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+<!-- Hero Section -->
+<section class="hero center">
+    <!-- Imagen de fondo -->
+    <img class="hero-bg" src="../Multimedia/Comunicación Institucional/Fotos antiguas/P7041005.JPG" alt="Industria textil" loading="lazy">
+    
+    <!-- Overlay oscuro -->
+    <div class="hero-overlay"></div>
+    
+    <!-- Contenido -->
+    <div class="hero-content">
+        <h1 class="animate-element slide-down">Puntos de Venta</h1>
+    </div>
+</section>
+
+<section class="sucursales">
+<div id="controls">
+    <button id="btnUbicacion">Localizar el distribuidor más cercano</button>
+  </div>
+
+  <div id="map"></div>
+
+  <!-- 1) Definimos el array de puntos y las variables globales -->
+  <script>
+    // Tus puntos de venta:
+    const puntos = [
+      {
+            lat: -32.9805312,
+            lng: -60.6885599,
+            title: "LIMA FREDY",
+            content: `<div>Teléfono: 3412442674</div><div>Email : maquintegral@gmail.com</div><div><br></div><div>Dirección: Bv. Avellaneda 4393</div><div>Ciudad: Rosario&nbsp;</div><div>Provincia: Santa Fe</div><div><a href="https://maquintegralmaster.mitiendanube.com">https://maquintegralmaster.mitiendanube.com</a></div>`
+        },
+        {
+            lat: -36.9039833,
+            lng: -60.3212378,
+            title: "ELIZAGA",
+            content: `<div>Teléfono fijo: 2284-410726</div><div>Móvil: 2284-585566 (claro)</div><div>Email: ricardomaquinasdecoser@gmail.com&nbsp;</div><div>Dirección: Antonio Pelegrino 3626</div><div>Ciudad: Olavarría (7400)</div><div>Provincia de Buenos Aires&nbsp;</div><div>Facebook: Casa Elizaga&nbsp;</div><div>Venta online</div><div><b><a href="https://www.instagram.com/maquinas_de_coser_olav?utm_source=qr&amp;igsh=azlkcXFlb2VlaWc= ">INSTAGRAM</a></b></div>`
+        },
+        {
+            lat: -31.2529632,
+            lng: -61.4854027,
+            title: "CASA TOMAS",
+            content: `<div>-3492-279892 (celular) // 3492-422683 (fijo)</div><div>-casatomas.rafaela@yahoo.com.ar</div><div>-San Martin 556</div><div>-Rafaela, Santa Fe</div><div>-<a href="www.casa-tomas.com ">www.casa-tomas.com&nbsp;</a></div>`
+        },
+        {
+            lat: -32.9449918,
+            lng: -60.6738209,
+            title: "DONNOLA",
+            content: `<div>Número 3414375054 - Wsap 3416406405</div><div>-Email info.casametilli@gmail.com</div><div>-Direccion: San Nicolas 1172</div><div>&nbsp;Rosario, Santa Fe</div><div><a href="www.casametilli.com.ar ">www.casametilli.com.ar&nbsp;</a></div>`
+        },
+        {
+            lat: -32.4024115,
+            lng: -63.2438198,
+            title: "LOPEZ MARIA",
+            content: `<div>LOPEZ MARIA</div><div>Tel 3536559742</div><div>03534531224</div><div>noraagoglia@hotmail.com</div><div>Bv España 582</div><div>Villa María</div><div>Córdoba</div>`
+        },
+        {
+            lat: -34.2715643,
+            lng: -62.7092571,
+            title: "MELIA",
+            content: `<div>Numero : fijo: 03382-42128/ cel: 03382-15670609</div><div>Email: rubenmelia-56@hotmail.com</div><div>Direccion: Azcuenaga 470-Rufino (santa fe)</div>`
+        },
+        {
+            lat: -34.5911298,
+            lng: -58.4357058,
+            title: "NUI NUI",
+            content: `<div>número: 1132331310&nbsp;</div><div>Dirección : Thames 1167 - Caba - Bs.As.&nbsp;</div><div><a href="nuinui.com.ar">nuinui.com.ar</a></div><div>Email: Info@nuinui.com.ar&nbsp;</div>`
+        },
+        {
+            lat: -41.1476178,
+            lng: -71.2996646,
+            title: "FUENTES",
+            content: `<div>Teléfono ‪+549 2940454706‬</div><div><br></div><div>Email: hya.maquinaria@gmail.com&nbsp;</div><div><br></div><div>Dirección Yatasto 881</div><div><br></div><div>San Carlos de Bariloche/ Río Negro&nbsp;</div><div><br></div><div><a href="https://fuentesmaxi90.wixsite.com/hilo-y-aguja ">https://fuentesmaxi90.wixsite.com/hilo-y-aguja&nbsp;</a></div>`
+        },
+        {
+            lat: -33.8875676,
+            lng: -60.5761294,
+            title: "GARETTI",
+            content: `<div>Teléfono celular: 2477-465465</div><div>Email:maxigaretti@hotmail.com&nbsp;</div><div>Avenida Alsina 1179</div><div>Pergamino/Provincia Buenos Aires</div>`
+        },
+        {
+            lat: -32.9467357,
+            lng: -60.6652577,
+            title: "MILITELLO",
+            content: `<div>3412104636</div><div>ventas.militello@gmail.com</div><div>Suipacha 1191&nbsp;</div><div>Rosario, Santa Fe&nbsp;</div><div><a href="Www.militello.com.ar">Www.militello.com.ar</a>&nbsp;</div>`
+        },
+        {
+            lat: -31.5562575,
+            lng: -63.5356054,
+            title: "ROSSA",
+            content: `<div><br></div><div>3573690070</div><div>juanchirossa@gmail.com&nbsp;</div><div>H Yrigoyen 650 villa del rosario cba</div>`
+        },
+        {
+            lat: -33.1564137,
+            lng: -60.5129906,
+            title: "MARRACINI",
+            content: `<div><br></div><div>3402447380&nbsp;</div><div>Arroyo seco, santa fe</div><div>maquineriaarroyoseco@hotmail.com</div>`
+        },
+        {
+            lat: -27.4633301,
+            lng: -58.8339545,
+            title: "ABRAHAM MIRTA",
+            content: `<div><b>ABRAHAM MIRTA <br></b>Fray josé de la quintana 1298</div><div>Tel: 3794631124&nbsp;</div><div>Corrientes-Corrientes</div>`
+        },
+        {
+            lat: -28.4723614,
+            lng: -65.7766535,
+            title: "ALLENDES REBECA",
+            content: `<div>ALLENDES REBECA</div><div>LA MODISTA</div><div>Tel:. 3834930267</div><div>Mail: lamodistacatamarca@gmail.com</div><div>Salta 924</div><div>San Fernando del Valle de Catamarca /. Catamarca</div>`
+        },
+        {
+            lat: -34.6765101,
+            lng: -58.5647609,
+            title: "ARIEL M.MISAGNA Y CLAUDIO D.GONZALO MAQ. ARIEL",
+            content: `<div>ARIEL M.MISAGNA Y CLAUDIO D.GONZALO MAQ. ARIEL</div><div>4441-2025/113021-4122/11-3348-9223</div><div>Mail: casaariel1985@gmail.com</div><div>Avenida Presidente Arturo Illia 2596.</div><div>San Justo,Buenos Aires.</div><div>www.casaariel.com.ar</div>`
+        },
+        {
+            lat: -27.3725256,
+            lng: -55.8974325,
+            title: "BAJAROFF ",
+            content: `<div>BAJAROFF&nbsp;</div><div>Tel: 3764384867</div><div>Mal: textilayacucho2437@gmail.com</div><div>Ayacucho 2437</div><div>Posadas-Misiones</div><div>www.textilayacucho.com.ar</div>`
+        },
+        {
+            lat: -32.9507604,
+            lng: -60.678345,
+            title: "CANCELLIERI DIEGO",
+            content: `<div>CANCELLIERI DIEGO</div><div>Tel 341-4427887 - 341-3251128</div><div>Mail: luisyoscar@cancellierimaquinas.com</div><div>ROSARIO, SANTA FE</div><div>AV PELLEGRINI 3831</div><div>https://cancellierimaquinas.com/</div>`
+        },
+        {
+            lat: -34.6567251,
+            lng: -58.5085093,
+            title: "CASA VARAS",
+            content: `<div>CASA VARAS</div><div>Tel: 011 687-2828 / 1148706785</div><div>Casa Varas</div><div>Av. Juan Bautista Alberdi 6600 caba</div><div>Mail :maquinasparacoservaras@gmail.com</div>`
+        },
+        {
+            lat: -34.4895367,
+            lng: -58.5001693,
+            title: "CASTRO PAULA",
+            content: `<div>CASTRO PAULA</div><div>Tel: 11 5117-1181</div><div>mtescuelaok@gmail.com</div><div>Avenida Santa fe 2008</div><div>Martínez, Buenos Aires</div><div>Sitio web: www.mtescuela.com</div>`
+        },
+        {
+            lat: -43.2546253,
+            lng: -65.3158845,
+            title: "DOMÍNGUEZ - LA QUEBRADA",
+            content: `<div>DOMÍNGUEZ - LA QUEBRADA</div><div>Tel: 2804873559</div><div>Mail: laquebradadebelen1@gmail.com</div><div>25 de mayo 702</div><div>Trelew-Chubut</div>`
+        },
+        {
+            lat: -26.833476,
+            lng: -65.2004508,
+            title: "EL CARRETEL",
+            content: `<div>EL CARRETEL</div><div>Tel: 0381 4219714</div><div>Mail: casabes@gmail.com</div><div>Crisóstomo Álvarez 178</div><div>San Miguel de Tucumán</div>`
+        },
+        {
+            lat: -26.833476,
+            lng: -65.2004508,
+            title: "EL CARRETEL",
+            content: `<div>EL CARRETEL</div><div>Tel: 0381 4219714</div><div>Mail: casabes@gmail.com</div><div>Crisóstomo Álvarez 178</div><div>San Miguel de Tucumán</div>`
+        },
+        {
+            lat: -34.5963438,
+            lng: -58.5106386,
+            title: "GARCIA YAMILA",
+            content: `<div>GARCIA YAMILA</div><div>AMOCOSER</div><div>Tel 1144072555</div><div>Mail: amocoserfabric@gmail.com</div><div>Habana 3750, CABA</div><div>CABA</div><div>amocoserfabric.empretienda.com.ar / amocoserfabric.com.ar</div>`
+        },
+        {
+            lat: -38.7183177,
+            lng: -62.2663478,
+            title: "GARDELLA MAXIMILIANO",
+            content: `<div>GARDELLA MAXIMILIANO</div><div>TEL: 2914720948</div><div>Tel fijo 2914526041</div><div>maximilianogardella@yahoo.com.ar</div><div>OHiggins 464</div><div>Bahia Blanca</div><div>Pcia de bs as</div>`
+        },
+        {
+            lat: -31.7438494,
+            lng: -60.5163144,
+            title: "GONZALEZ OXARAN WALDEMAR",
+            content: `<div>GONZALEZ OXARAN WALDEMAR</div><div>MÁQUINAS TEXTILES</div><div>3434 196626</div><div>Almafuerte 119</div><div>Paraná- Entre Rios</div>`
+        },
+        {
+            lat: -38.7335705,
+            lng: -62.2392531,
+            title: "MATAS MATÍAS",
+            content: `<div>MATAS MATÍAS</div><div>MULTI MAQ</div><div>Tel:2914990094</div><div>matimatas@hotail.com</div><div>RASTREADOR fournier 399</div><div>Bahía blanca</div><div>Buenos Aires</div><div>Facebook: multi maq</div>`
+        },
+        {
+            lat: -34.2715643,
+            lng: -62.7092571,
+            title: "MELIA RUFINO",
+            content: `<div>MELIA RUFINO</div><div>MELIA</div><div>Teléfono: 03382-42128/ cel: 03382-15670609</div><div>Mail: rubenmelia-56@hotmail.com</div><div>Azcuenaga 470-Rufino (santa fe)</div>`
+        },
+        {
+            lat: -28.476346,
+            lng: -65.7811877,
+            title: "MORENO MARIA ISABEL",
+            content: `<div>MORENO MARIA ISABEL</div><div>Tel: 3834329665</div><div>SAN FERNANDO DEL VALLE DE CATAMARCA</div><div>Av. Guemes 381</div>`
+        },
+        {
+            lat: -35.6593239,
+            lng: -63.7577887,
+            title: "CASA PG",
+            content: `<div>PANZA GODOY YANINA</div><div>CASA PG</div><div>Tel: 2302622800</div><div>Mail:casapglapampa@gmail.com</div><div>Calle 1 entre Av. San Martín y 18 N 826</div><div>General Pico - La Pampa</div>`
+        },
+        {
+            lat: -34.0985438,
+            lng: -59.0190839,
+            title: "Máquinas Roca",
+            content: `<div>PAZ MAXIMILIANO</div><div>Máquinas Roca</div><div>Roca 557</div><div>Zárate</div><div>Buenos Aires</div><div>mail: maquinasroca@gmail.com</div><div>Página: www.maquinasroca.com.ar</div>`
+        },
+        {
+            lat: -32.4939571,
+            lng: -58.2285845,
+            title: "MAQUI CENTRO",
+            content: `<div>ROJO MAURO JAVIER</div><div>MAQUI CENTRO</div><div>3442627728</div><div>maqui.centro@hotmail.com</div><div>ARTIGAS 650 (esquina Calderón)</div><div>Concepción del Uruguay, provincia de Entre Rios</div>`
+        },
+        {
+            lat: -32.4139155,
+            lng: -63.2405401,
+            title: "RUBIOLO",
+            content: `<div>RUBIOLO</div><div>Tel:3534 294766</div><div>Mail: maquineravillamaria@hotmail.com</div><div>Mendoza 1134</div><div>Villa María Pcia de Córdoba</div>`
+        },
+        {
+            lat: -34.6218462,
+            lng: -58.519821,
+            title: "SCHWARTZ DIEGO",
+            content: `<div>SCHWARTZ DIEGO</div><div>Tel: +5491131235050</div><div>Mail: kolltradeventas@gmail.com</div><div>Nogoyá 5550</div><div>CABA</div><div>www.kolltrade.com.ar</div>`
+        },
+        {
+            lat: -29.4212856,
+            lng: -66.8563694,
+            title: "TESTA NORBERTO ADRIAN",
+            content: `<div>TESTA NORBERTO ADRIAN</div><div>Tel: 3804 22-0784</div><div>La Rioja- La Rioja</div><div>AVDA. FACUNDO QUIROGA 875</div>`
+        },
+        {
+            lat: -32.8869812,
+            lng: -68.8356505,
+            title: "TODO MÁQUINA",
+            content: `<div>TODO MÁQUINA</div><div>Tel: 54 9 2615 00-1906</div><div>Mendoza- Mendoza</div><div>RIOJA 1436 DPTO. 1</div>`
+        },
+        {
+            lat: -34.6354503,
+            lng: -58.603343,
+            title: "TRACZ LEONARDO Y TRACZ TEODORO",
+            content: `<div>TRACZ LEONARDO Y TRACZ TEODORO</div><div>HAEDO MAQUINAS</div><div>Tel: (011) 4443 - 3995</div><div>Buenos aires</div><div>AV. PTE. PERON 2927</div>`
+        },
+        {
+            lat: -24.7585896,
+            lng: -65.4093478,
+            title: "VELAZQUEZ CHOCOBAR, GASTON NICOLAS",
+            content: `<div>VELAZQUEZ CHOCOBAR, GASTON NICOLAS</div><div>VICO CHOCOBAR</div><div>Tel: 3875 39-4371</div><div>SALTA</div><div>RUIZ DIAZ DE GUZMAN 527</div>`
+        },
+        {
+            lat: -27.4665726,
+            lng: -58.8361157,
+            title: "ZARATE MERCEDES CAROLA",
+            content: `<div>ZARATE MERCEDES CAROLA</div><div>CORRIENTES-CORRIENTES</div><div>9 DE julio 1152</div><div>0379-4425523</div>`
+        },
+        {
+            lat: -31.411155,
+            lng: -64.178721,
+            title: "Casa Vargas Center",
+            content: `<div>Domingo F. Sarmiento 222, Córdoba, Córdoba Province, Argentina</div>`
+        }
+    ];
+
+    let mapa, directionsService, directionsRenderer;
+
+    // 2) Función initMap (debe llamarse exactamente así)
+     function initMap() {
+    const mapa = new google.maps.Map(
+      document.getElementById("map"),
+      {
+        center: { lat: -34.6037, lng: -58.3816 },  // ← coma al final
+        zoom: 5,                                   // ← coma al final
+        mapId: "DEMO_MAP_ID"                       // ← tu Map ID de prueba
+      }
+    );
+
+     // 2.2) Colocar marcadores con popups
+puntos.forEach(p => {
+  // 1) Crear un contenedor para el icono
+  const wrapper = document.createElement("div");
+  const img = document.createElement("img");
+  img.src = "../Multimedia/Imagenes/Marcador.png";
+  img.alt = p.title;
+  img.style.width  = "50px";
+  img.style.height = "50px";
+  wrapper.appendChild(img);
+
+  // 2) Crear el AdvancedMarkerElement usando ese nodo
+  const marker = new google.maps.marker.AdvancedMarkerElement({
+    map: mapa,
+    position: { lat: p.lat, lng: p.lng },
+    title: p.title,
+    content: wrapper
+  });
+
+  // 3) Crear y asociar el InfoWindow al marcador
+  const info = new google.maps.InfoWindow({
+    content: `<h3>${p.title}</h3>${p.content}`
+  });
+  marker.addListener("click", () => {
+    info.open({ anchor: marker, map: mapa });
+  });
+});
+
+
+      // 2.3) Preparar Directions API para trazar rutas
+      directionsService = new google.maps.DirectionsService();
+      directionsRenderer = new google.maps.DirectionsRenderer({
+        suppressMarkers: true
+      });
+      directionsRenderer.setMap(mapa);
+
+      // 2.4) Listener del botón “Mostrar punto más cercano”
+      document.getElementById("btnUbicacion")
+        .addEventListener("click", () => {
+          const btn = document.getElementById("btnUbicacion");
+          btn.disabled = true;
+          btn.textContent = "Buscando punto más cercano…";
+
+          if (!navigator.geolocation) {
+            alert("Tu navegador no soporta geolocalización.");
+            resetButton();
+            return;
+          }
+
+          navigator.geolocation.getCurrentPosition(position => {
+            const usuario = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            const accuracy = position.coords.accuracy; // metros
+
+            // Marcar al usuario con pin azul
+            new google.maps.Marker({
+              position: usuario,
+              map: mapa,
+              title: "Tu ubicación",
+              icon: {
+                url: "../Multimedia/Imagenes/Marcador-me.png",
+                scaledSize: new google.maps.Size(60, 60)
+              }
+            });
+
+            // Dibujar círculo de precisión
+            new google.maps.Circle({
+              strokeColor: "#0088ff",
+              strokeOpacity: 0.4,
+              strokeWeight: 1,
+              fillColor: "#0088ff",
+              fillOpacity: 0.15,
+              map: mapa,
+              center: usuario,
+              radius: accuracy
+            });
+
+            // Calcular el punto más cercano (Haversine)
+            const R = 6371; 
+            let minDist = Infinity, destino = null;
+            puntos.forEach(p => {
+              const dLat = (p.lat - usuario.lat) * Math.PI/180;
+              const dLng = (p.lng - usuario.lng) * Math.PI/180;
+              const a = Math.sin(dLat/2)**2 +
+                        Math.cos(usuario.lat * Math.PI/180) *
+                        Math.cos(p.lat * Math.PI/180) *
+                        Math.sin(dLng/2)**2;
+              const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+              const dist = R * c;
+              if (dist < minDist) {
+                minDist = dist;
+                destino = p;
+              }
+            });
+
+            if (!destino) {
+              alert("No se encontró ningún punto.");
+              resetButton();
+              return;
+            }
+
+            // Trazar ruta real usuario → destino
+            directionsService.route({
+              origin: usuario,
+              destination: { lat: destino.lat, lng: destino.lng },
+              travelMode: google.maps.TravelMode.DRIVING
+            }, (result, status) => {
+                if (status === "OK") {
+    directionsRenderer.setDirections(result);
+    const leg = result.routes[0].legs[0];
+
+    // Construyo la URL de Google Maps Directions
+    const gmapsUrl = 
+      `https://www.google.com/maps/dir/?api=1` +
+      `&origin=${usuario.lat},${usuario.lng}` +
+      `&destination=${destino.lat},${destino.lng}`;
+
+    // Aquí agrego un <a> al contenido del InfoWindow
+    const infoContent = `
+      <h3>${destino.title}</h3>
+      <div>Distancia: ${leg.distance.text}</div>
+      <div>Tiempo: ${leg.duration.text}</div>
+      <p><a href="${gmapsUrl}" target="_blank">
+        Abrir en Google Maps
+      </a></p>`;
+    new google.maps.InfoWindow({
+      position: destino,
+      content: infoContent
+                }).open(mapa);
+              } else {
+                alert("No se pudo trazar la ruta: " + status);
+              }
+              resetButton();
+            });
+
+          }, err => {
+            alert("No se pudo obtener tu ubicación: habilita tu ubicación para buscar el punto más cercano. ");
+            resetButton();
+          }, {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 0
+          });
+        });
+
+      // Función auxiliar para reactivar el botón
+      function resetButton() {
+        const btn = document.getElementById("btnUbicacion");
+        btn.disabled = false;
+        btn.textContent = "Mostrar distribuidor más cercano";
+      }
+    }
+  </script>
+
+  <!-- 3) Cargar la API de Google Maps AL FINAL y llamar a initMap -->
+<script src="https://unpkg.com/@googlemaps/marker"></script>
+<script>
+  (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+    key: "YOUR_API_KEY",
+    v: "weekly",
+    // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+    // Add other bootstrap parameters as needed, using camel case.
+  });
+</script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmqqPU1sIeL__U8H0DcU2Uk8m1qWOdaq0&callback=initMap&libraries=marker">
+</script>
+
+</section>
+
+<section class="vender-alfa">
+    <div class="vender-alfa-container">
+        <div class="vender-alfa-text">
+            <h2 class="animate-element slide-down">COMERCIALIZÁ ALFA EN TU NEGOCIO</h2>
+            <p class="animate-element slide-up">Formá parte de nuestra red de distribuidores oficiales y accedé a productos con respaldo internacional, soporte técnico directo y materiales de venta profesionales.
+            </p>
+            <p class="animate-element slide-up">
+            Confiá en una marca con más de 100 años de trayectoria. Estamos para acompañarte.
+            </p>
+            <p class="animate-element slide-up">
+             Contactanos por Whatsapp y empezá a trabajar con Alfa hoy mismo.
+            BOTON
+            o por medio de Mail  info@maquinasalfa.com</p>
+            <div class="animate-element slide-down"><a href="#" class="cta-button-red">COMENZA A VENDER ALFA</a></div>
+
+            
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Footer HTML -->
+<footer class="site-footer-minimal">
+    <div class="footer-container-minimal">
+        <!-- Columna 1: Logo y descripción -->
+        <div class="footer-brand-minimal">
+            <div class="footer-logo">
+                <a href="../index.html">
+                    <img src="../Multimedia/Logo Alfa.png" alt="Logo Alfa" loading="lazy">
+                </a>
+            </div>
+            <p class="brand-description">Más de 100 años de historia española en máquinas de coser. Calidad europea con soporte local en Argentina.</p>
+        </div>
+
+        <!-- Columna 2: Contacto -->
+        <div class="footer-contact-minimal">
+            <h4>CONTACTO</h4>
+            <p>info@alfamaquinas.com</p>
+            <p>+54 351 555-1234</p>
+            <div class="address-minimal">
+                <p>Sarmiento 222,</p>
+                <p>Centro, Córdoba X5000ABC</p>
+            </div>
+            <a href="./puntosDeVenta.html" class="map-link-minimal">VER EN MAPA ></a>
+        </div>
+
+        <!-- Columna 3: Navegación -->
+        <div class="footer-navigation-minimal">
+            <h4>NAVEGACIÓN</h4>
+            <nav class="footer-nav-links">
+                <a href="./nosotros.html">Nosotros</a>
+                <a href="./puntosDeVenta.html">Puntos de Venta</a>
+                <a href="./familiares.html">Máquinas Familiares</a>
+                <a href="./industriales.html">Máquinas Industriales</a>
+                <a href="./contacto.html">Contacto</a>
+            </nav>
+        </div>
+
+        <!-- Columna 4: CTA Vendedores + Redes Sociales -->
+        <div class="footer-cta-minimal">
+            <h4>¿QUERÉS VENDER<br>ALFA?</h4>
+            <a href="https://wa.me/5493512620023?text=¡Hola!%20me%20contacto%20desde%20...%20debido%20a%20que%20me%20gustaria%20sumar%20Alfa%20a%20mi%20cartera%20de%20productos.%20🤗" class="cta-link-minimal" target="_blank">SUMA ALFA A TUS PRODUCTOS ></a>
+            
+            <!-- Redes Sociales debajo del CTA -->
+            <div class="footer-social-minimal">
+                <h4>SEGUINOS</h4>
+                <div class="social-links-minimal">
+                    <a href="https://www.facebook.com/alfaargentinacostura" aria-label="Facebook" target="_blank">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                    <a href="https://www.instagram.com/alfacosturaarg/" aria-label="Instagram" target="_blank">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="https://www.youtube.com/@alfaargentina1920" aria-label="YouTube" target="_blank">
+                        <ion-icon name="logo-youtube"></ion-icon>
+                    </a>
+                    <a href="https://www.tiktok.com/@alfa.argentina" aria-label="TikTok" target="_blank">
+                        <ion-icon name="logo-tiktok"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- JS externo -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/plugins/optimumx/ls.optimumx.min.js"></script>
+  <script src="https://unpkg.com/@googlemaps/marker"></script>
+  <script defer src="../JS/script.js"></script>
+  <script defer src="../JS/animaciones.js"></script>
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmqqPU1sIeL__U8H0DcU2Uk8m1qWOdaq0&callback=initMap&libraries=marker">
+</script>
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

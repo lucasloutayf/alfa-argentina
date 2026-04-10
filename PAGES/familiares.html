@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="../Multimedia/Logo Alfa.png" as="image">
+
+    <!-- Load non-critical CSS asynchronously -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap"></noscript>
+    
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../CSS/styles.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&display=swap"
+    rel="stylesheet"
+  />
+
+    <!-- Font awesome -->
+   <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  integrity="sha512-Fo3rlrZj/k7ujTTXJp6a2eVqGd6mY8tA0PmFcO1v8gh0RZy7ZIRx7cvvX4Z3QhgyxXFF5N7k4pzKZzK2aPYbqg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+  <!-- Animate.css -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" 
+  />
+
+  <!-- Favicon estándar -->
+<link rel="icon" type="image/png" sizes="32x32" href="../Multimedia/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../Multimedia/favicon_io/favicon-16x16.png">
+<link rel="shortcut icon" href="../Multimedia/favicon_io/favicon.ico">
+
+<!-- Para Android -->
+<link rel="icon" type="image/png" sizes="192x192" href="../Multimedia/favicon_io/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="../Multimedia/favicon_io/android-chrome-512x512.png">
+
+<!-- Para Apple -->
+<link rel="apple-touch-icon" href="../Multimedia/favicon_io/apple-touch-icon.png">
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <title>Familiares - Alfa Argentina</title>
+</head>
+
+<body>
+
+     <!-- Overlay para cerrar el menú -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <div class="top-bar">
+                <div class="logo">
+                    <a href="../index.html">
+                        <img loading="lazy" src="../Multimedia/Logo Alfa.png" alt="Logo" />
+                    </a>
+                </div>
+                <div class="menu-toggle" id="menuToggle">☰</div>
+            </div>
+
+            <!-- Menú lateral desde la izquierda -->
+            <div class="navitems" id="navItems">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="./nosotros.html">Nosotros</a></li>
+                    <li><a href="./puntosDeVenta.html">Puntos de Venta</a></li>
+                    <li><a class="active" href="./familiares.html">Maquinas Familiares</a></li>
+                    <li><a href="./industriales.html">Maquinas Industriales</a></li>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+
+<!-- Hero Section -->
+<section class="hero center">
+    <!-- Imagen de fondo -->
+    <video class="hero-maquinas-familiares" src="../Multimedia/videos-gifs/Gif-Familiares.mp4" autoplay no-loop muted ></video>
+
+    
+    
+    
+
+    <!-- Contenido -->
+    <div class="hero-content">
+        <h1 class="animate-element slide-down">Maquinas Familiares</h1>
+    </div>
+</section>
+
+<!-- Comparar maquinas -->
+
+<section class="compare-machines-section">
+    <div class="compare-machines">
+        <h2>Compara nuestras máquinas para ver cuál es tu mejor opción!</h2>
+        <a href="./comparador.html" class="cta-button animate-element slide-down">Comparar máquinas</a>
+    </div>
+</section>
+
+<!-- Familia Style -->
+    <section class="section familia-style">
+        <div class="product-container">
+            <h3 class="section-title animate-element slide-down">Conoce nuestra Familia Style</h3>
+            <div class="products-grid">
+                <div class="product-card animate-element slide-left">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Familiar-Alfa-Style-20.png" class="product-image"></img>
+                    <h4 class="product-name">Style 20</h4>
+                    <p class="product-description">Ideal para empezar a coser.</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+                <div class="product-card animate-element slide-up">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Familiar-Alfa-Style-30.png" class="product-image"></img>
+                    <h4 class="product-name">Style 30</h4>
+                    <p class="product-description">Pensada para todos los niveles.</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+                <div class="product-card animate-element slide-right">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Familiar-Alfa-Style-40.png" class="product-image"></img>
+                    <h4 class="product-name">Style 40</h4>
+                    <p class="product-description">Potencia y precisión sin igual.</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Style UP -->
+    <section class="section style-up">
+        <div class="product-container">
+            <h3 class="section-title animate-element slide-down">La costura sube de nivel con Style UP</h3>
+            <div class="products-grid">
+                <div class="product-card animate-element slide-left">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Familiar-Alfa-Style-up-20.png" class="product-image"></img>
+                    <h4 class="product-name">Style UP20</h4>
+                    <p class="product-description">Sencilla, fácil e intuitiva</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+                <div class="product-card animate-element slide-up">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Familiar-Alfa-Style-up-30.png" class="product-image"></img>
+                    <h4 class="product-name">Style UP30</h4>
+                    <p class="product-description">Completa, versátil y potente</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+                <div class="product-card animate-element slide-right">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Familiar-Alfa-Style-up-40.png" class="product-image"></img>
+                    <h4 class="product-name">Style UP40</h4>
+                    <p class="product-description">Una máquina sin restricciones</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practik -->
+    <section class="section practik">
+        <div class="product-container">
+            <h3 class="section-title animate-element slide-down">Practik: tu aliada diaria</h3>
+            <div class="products-grid">
+                <div class="product-card animate-element slide-left">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Familiar-Alfa-Practik-1.png" class="product-image"></img>
+                    <h4 class="product-name">Practik 1</h4>
+                    <p class="product-description">Fácil de usar, fuerte y confiable</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+                <div class="product-card animate-element slide-up">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Familiar-Alfa-Practik-5.png" class="product-image"></img>
+                    <h4 class="product-name">Practik 5</h4>
+                    <p class="product-description">Intuitiva, completa y versátil</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+                <div class="product-card animate-element slide-down">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Familiar-Alfa-Practik-7.png" class="product-image"></img>
+                    <h4 class="product-name">Practik 7</h4>
+                    <p class="product-description">Rinde al máximo en cada proyecto</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+                <div class="product-card animate-element slide-right">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Familiar-Alfa-Practik-9.png" class="product-image"></img>
+                    <h4 class="product-name">Practik 9</h4>
+                    <p class="product-description">Sin límites para tu creatividad</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next -->
+    <section class="section next-series">
+        <div class="product-container">
+            <h3 class="section-title animate-element slide-down">Next: lista para todo desafío</h3>
+            <div class="products-grid">
+                <div class="product-card animate-element slide-left">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Familiar-Alfa-Next-830.png" class="product-image"></img>
+                    <h4 class="product-name">Next 830+</h4>
+                    <p class="product-description">Potente, precisa y lista para todo</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+                <div class="product-card animate-element slide-up">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Familiar-Alfa-Next-840.png" class="product-image"></img>
+                    <h4 class="product-name">Next 840+</h4>
+                    <p class="product-description">Económica, versátil y siempre lista</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+                <div class="product-card animate-element slide-down">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Familiar-Alfa-Next-40.png" class="product-image"></img>
+                    <h3 class="product-name">Next 40</h3>
+                    <p class="product-description">Simple, práctica, eficaz y compacta</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+                <div class="product-card animate-element slide-right">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Familiar-Alfa-Next-100.png" class="product-image"></img>
+                    <h4 class="product-name">Next 100</h4>
+                    <p class="product-description">Versátil, precisa y siempre confiable</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profesionales -->
+    <section class="section profesionales">
+        <div class="product-container">
+            <h3 class="section-title animate-element slide-down">Terminaciones profesionales: Overlocks y Collareta</h3>
+            <div class="products-grid">
+                <div class="product-card animate-element slide-left">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Tapacostura-Alfa-Cover-Style.png" class="product-image"></img>
+                    <h4 class="product-name">Cover Style</h4>
+                    <p class="product-description">Acabados elásticos y prolijos</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+                <div class="product-card animate-element slide-up">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Remalladora-Alfa-Overlock-8707.png" class="product-image"></img>
+                    <h4 class="product-name">Style 8707+</h4>
+                    <p class="product-description">Ágil, precisa y lista para crear</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+                <div class="product-card animate-element slide-right">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Remalladora-Alfa-Overlock-8708.png" class="product-image"></img>
+                    <h3 class="product-name">Style 8708+</h3>
+                    <p class="product-description">Potente y versátil en cada costura</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alfa Series -->
+    <section class="section alfa-series">
+        <div class="product-container">
+            <h3 class="section-title animate-element slide-down">Para cada estilo de costura</h3>
+            <div class="products-grid">
+                <div class="product-card animate-element slide-left">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Familiar-Alfa-Petit.png" class="product-image"></img>
+                    <h4 class="product-name">Alfa petit</h4>
+                    <p class="product-description">Ideal para empezar a crear fácil</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+                <div class="product-card animate-element slide-up">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Familiar-Alfa-Denim.png" class="product-image"></img>
+                    <h4 class="product-name">Alfa Denim</h4>
+                    <p class="product-description">Diseñada para telas resistentes</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+                <div class="product-card animate-element slide-right">
+                    <img src="../Multimedia/Página Web/Fotos Pagina Familiares/Familiar-Alfa-Zart.png" class="product-image"></img>
+                    <h4 class="product-name">Alfa Zart +</h4>
+                    <p class="product-description">Tecnología y precisión sin límites</p>
+                    <a href="#" class="cta-button">Más información</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<!-- Footer HTML -->
+<footer class="site-footer-minimal">
+    <div class="footer-container-minimal">
+        <!-- Columna 1: Logo y descripción -->
+        <div class="footer-brand-minimal">
+            <div class="footer-logo">
+                <a href="../index.html">
+                    <img src="../Multimedia/Logo Alfa.png" alt="Logo Alfa" loading="lazy">
+                </a>
+            </div>
+            <p class="brand-description">Más de 100 años de historia española en máquinas de coser. Calidad europea con soporte local en Argentina.</p>
+        </div>
+
+        <!-- Columna 2: Contacto -->
+        <div class="footer-contact-minimal">
+            <h4>CONTACTO</h4>
+            <p>info@alfamaquinas.com</p>
+            <p>+54 351 555-1234</p>
+            <div class="address-minimal">
+                <p>Sarmiento 222,</p>
+                <p>Centro, Córdoba X5000ABC</p>
+            </div>
+            <a href="./puntosDeVenta.html" class="map-link-minimal">VER EN MAPA ></a>
+        </div>
+
+        <!-- Columna 3: Navegación -->
+        <div class="footer-navigation-minimal">
+            <h4>NAVEGACIÓN</h4>
+            <nav class="footer-nav-links">
+                <a href="./nosotros.html">Nosotros</a>
+                <a href="./puntosDeVenta.html">Puntos de Venta</a>
+                <a href="./familiares.html">Máquinas Familiares</a>
+                <a href="./industriales.html">Máquinas Industriales</a>
+                <a href="./contacto.html">Contacto</a>
+            </nav>
+        </div>
+
+        <!-- Columna 4: CTA Vendedores + Redes Sociales -->
+        <div class="footer-cta-minimal">
+            <h4>¿QUERÉS VENDER<br>ALFA?</h4>
+            <a href="https://wa.me/5493512620023?text=¡Hola!%20me%20contacto%20desde%20...%20debido%20a%20que%20me%20gustaria%20sumar%20Alfa%20a%20mi%20cartera%20de%20productos.%20🤗" class="cta-link-minimal" target="_blank">SUMA ALFA A TUS PRODUCTOS ></a>
+            
+            <!-- Redes Sociales debajo del CTA -->
+            <div class="footer-social-minimal">
+                <h4>SEGUINOS</h4>
+                <div class="social-links-minimal">
+                    <a href="https://www.facebook.com/alfaargentinacostura" aria-label="Facebook" target="_blank">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                    <a href="https://www.instagram.com/alfacosturaarg/" aria-label="Instagram" target="_blank">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a href="https://www.youtube.com/@alfaargentina1920" aria-label="YouTube" target="_blank">
+                        <ion-icon name="logo-youtube"></ion-icon>
+                    </a>
+                    <a href="https://www.tiktok.com/@alfa.argentina" aria-label="TikTok" target="_blank">
+                        <ion-icon name="logo-tiktok"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- JS externo -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/plugins/optimumx/ls.optimumx.min.js"></script>
+  <script defer src="../JS/script.js"></script>
+  <script defer src="../JS/animaciones.js"></script>
+
+  <!-- Ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+

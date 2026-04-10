@@ -1,0 +1,211 @@
+/*
+===============================================================================
+                            PUNTOS DE VENTA - RESPONSIVE
+===============================================================================
+*/
+
+.vender-alfa-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 0;
+    gap: 50px;
+    padding: 0 20px; /* Agregado para móviles */
+}
+
+.vender-alfa-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.vender-alfa-text h2{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    line-height: 1.3;
+    letter-spacing: 0.5px;
+    width: 80%;
+    max-width: 800px; /* Agregado para control máximo */
+}
+
+.vender-alfa-text p{
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #666;
+    text-align: center;
+    width: 50%;
+    max-width: 600px; /* Agregado para control máximo */
+    min-width: 280px; /* Agregado para móviles */
+}
+
+.sucursales{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 50px; /* Cambiado para márgenes laterales responsive */
+
+    gap: 50px;
+    padding: 40px 20px; /* Cambiado para padding responsive */
+}
+
+
+/* ============================================================================
+                           RESPONSIVE BREAKPOINTS
+============================================================================ */
+
+/* TABLETS - 1024px y menor */
+@media (max-width: 1024px) {
+    .vender-alfa-container {
+        margin: 80px 0;
+        gap: 40px;
+        padding: 0 40px;
+    }
+    
+    .vender-alfa-text h2 {
+        font-size: 2.2rem;
+        width: 90%;
+    }
+    
+    .vender-alfa-text p {
+        width: 70%;
+        font-size: 1.05rem;
+    }
+    
+    .sucursales {
+        margin: 80px 30px;
+        gap: 40px;
+        border-radius: 45px;
+        padding: 35px 25px;
+    }
+}
+
+/* MÓVILES - 768px y menor */
+@media (max-width: 768px) {
+    .vender-alfa-container {
+        margin: 60px 0;
+        gap: 30px;
+        padding: 0 20px;
+    }
+    
+    .vender-alfa-text h2 {
+        font-size: 1.8rem;
+        width: 95%;
+        letter-spacing: 0.3px;
+    }
+    
+    .vender-alfa-text p {
+        width: 90%;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .sucursales {
+        margin: 60px 15px;
+        gap: 30px;
+        border-radius: 35px;
+        padding: 30px 15px;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+    
+}
+
+/* MÓVILES PEQUEÑOS - 480px y menor */
+@media (max-width: 480px) {
+    .vender-alfa-container {
+        margin: 40px 0;
+        gap: 25px;
+        padding: 0 15px;
+    }
+    
+    .vender-alfa-text h2 {
+        font-size: 1.5rem;
+        width: 100%;
+        line-height: 1.4;
+    }
+    
+    .vender-alfa-text p {
+        width: 100%;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .sucursales {
+        margin: 40px 10px;
+        gap: 25px;
+        border-radius: 25px;
+        padding: 25px 10px;
+    }
+}
+
+/* MÓVILES MUY PEQUEÑOS - 360px y menor */
+@media (max-width: 360px) {
+    .vender-alfa-container {
+        margin: 30px 0;
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .vender-alfa-text h2 {
+        font-size: 1.3rem;
+    }
+    
+    .vender-alfa-text p {
+        font-size: 0.9rem;
+    }
+    
+    .sucursales {
+        margin: 30px 5px;
+        gap: 20px;
+        border-radius: 20px;
+        padding: 20px 8px;
+    }
+    
+}
+/*
+===============================================================================
+                            MAPA
+===============================================================================
+*/
+
+#controls {
+      margin-bottom: 10px;
+      z-index: 10;
+    }
+    #btnUbicacion {
+    display: inline-block;
+    background-color: #AF272E;
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(175, 39, 46, 0.3);
+    cursor: pointer;
+    }
+    #btnUbicacion:hover {
+    background-color: #8a1f25;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(175, 39, 46, 0.4);
+    }
+    #btnUbicacion:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    #map {
+      width: 90%;
+      height: 600px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+

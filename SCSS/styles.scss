@@ -1,0 +1,23 @@
+//base
+@import "base/vars";
+@import "base/utilities";
+@import "base/reset";
+@import "base/animations";
+//components
+@import "components/forms";
+@import "components/titles";
+@import "components/cards";
+@import "components/buttons";
+//layout
+@import "layouts/header";
+@import "layouts/hero";
+@import "layouts/footer";
+/* pages */
+@import "pages/productos";
+@import "pages/contacto";
+@import "pages/familiares";
+@import "pages/index";
+@import "pages/industriales";
+@import "pages/nosotros";
+@import "pages/puntosDeVenta"; 
+@import "pages/comparador"; 
